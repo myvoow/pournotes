@@ -1,4 +1,20 @@
-# Pournotes
+<p align="center">
+  <img src="docs/icon.png" width="128" alt="Icône de Pournotes">
+</p>
+
+<h1 align="center">Pournotes</h1>
+
+<p align="center">
+  <a href="https://github.com/myvoow/pournotes/releases/latest"><img src="https://img.shields.io/github/v/release/myvoow/pournotes?style=for-the-badge&color=00897B&label=version" alt="Dernière version"></a>
+  <img src="https://img.shields.io/badge/Android-8%2B-00897B?style=for-the-badge&logo=android&logoColor=white" alt="Android 8+">
+  <img src="https://img.shields.io/badge/Kotlin-Compose-FFCA28?style=for-the-badge&logo=kotlin&logoColor=black" alt="Kotlin et Jetpack Compose">
+  <img src="https://img.shields.io/badge/Material%203-Expressive-FFCA28?style=for-the-badge&logo=materialdesign&logoColor=black" alt="Material 3 Expressive">
+  <a href="https://github.com/myvoow/pournotes/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/myvoow/pournotes/build.yml?style=for-the-badge&label=build" alt="Build"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/myvoow/pournotes/releases/latest"><img src="https://img.shields.io/badge/T%C3%A9l%C3%A9charger%20l'APK-00695C?style=for-the-badge&logo=android&logoColor=white" height="44" alt="Télécharger l'APK"></a>
+</p>
 
 Un client PRONOTE pour Android, fait pour mon usage perso.
 

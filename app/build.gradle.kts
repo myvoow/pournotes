@@ -1,6 +1,19 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
+}
+
+// Release signing: keystore.properties locally (never committed), SIGNING_* variables in CI.
+val signing = Properties().apply {
+    rootProject.file("keystore.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
+    System.getenv("SIGNING_STORE_FILE")?.let {
+        put("storeFile", it)
+        put("storePassword", System.getenv("SIGNING_STORE_PASSWORD"))
+        put("keyAlias", System.getenv("SIGNING_KEY_ALIAS"))
+        put("keyPassword", System.getenv("SIGNING_KEY_PASSWORD"))
+    }
 }
 
 android {
@@ -15,8 +28,17 @@ android {
         versionName = "0.1.0"
         androidResources.localeFilters += listOf("fr")
     }
+    signingConfigs {
+        if (signing.isNotEmpty()) create("release") {
+            storeFile = file(signing.getProperty("storeFile"))
+            storePassword = signing.getProperty("storePassword")
+            keyAlias = signing.getProperty("keyAlias")
+            keyPassword = signing.getProperty("keyPassword")
+        }
+    }
     buildTypes {
         release {
+            signingConfig = signingConfigs.findByName("release")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))

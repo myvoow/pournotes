@@ -6,3 +6,5 @@ local.properties
 .kotlin/
 .idea/
 *.iml
+keystore.properties
+*.jks
